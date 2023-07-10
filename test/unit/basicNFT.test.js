@@ -15,9 +15,11 @@ const { assert, expect } = require("chai")
               //deploy contract
               await deployments.fixture("basic")
               //get contract
-              //const nftContract = await deployments.get("BasicNFT")
               const tokenContract = await deployments.get("BasicNFT")
-              contract = await ethers.getContractAt(tokenContract.abi, tokenContract.address)
+              contract = await ethers.getContractAt(
+                  tokenContract.abi,
+                  tokenContract.address
+              )
           })
           describe("constructor", () => {
               it("checks initial values", async () => {
